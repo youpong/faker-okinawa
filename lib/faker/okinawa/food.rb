@@ -1,12 +1,10 @@
 module Faker
   module Okinawa
-    class Food
-      FOOD_DIC_PATH = File.expand_path('../../../o-dic/food.dic', __dir__)
-      FOOD_DIC = Faker::Okinawa::Odic.new(FOOD_DIC_PATH)
+    class Food < Base_
 
       class << self
         def name
-          FOOD_DIC.entries.sample.word
+          dic("food").entries.sample.word
         end
       end
     end
